@@ -1,0 +1,12 @@
+{
+  "venvPath": "/home/sunfeng/anaconda3/envs",
+  "venv": "faod",
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "off",
+  "reportGeneralTypeIssues": false,
+  "reportUnusedImport": false,
+  "reportOptionalMemberAccess": false,
+  "reportOptionalSubscript": false,
+  "reportPrivateImportUsage": false
+}
