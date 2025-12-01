@@ -1,0 +1,105 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Test Python Debugger (test_debug.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_debug.py",
+            "python": "/home/sunfeng/anaconda3/envs/faod/bin/python",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "Debug train.py - DSEC base.yaml (Anaconda faod)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "python": "/home/sunfeng/anaconda3/envs/faod/bin/python",
+            "console": "integratedTerminal",
+            "args": [
+                "dataset=dsec",
+                "+experiment/dsec=base.yaml"
+            ],
+            "env": {
+                "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+                "CUDA_VISIBLE_DEVICES": "0",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "MKL_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1"
+            },
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug train_snn.py - SNN Training (Single GPU)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_snn.py",
+            "python": "/home/sunfeng/anaconda3/envs/faod/bin/python",
+            "console": "integratedTerminal",
+            "args": [
+                "dataset=dsec",
+                "+experiment/dsec=snn.yaml"
+            ],
+            "env": {
+                "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+                "CUDA_VISIBLE_DEVICES": "0",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "MKL_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug train_snn.py - SNN Training (Multi-GPU)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_snn.py",
+            "python": "/home/sunfeng/anaconda3/envs/faod/bin/python",
+            "console": "integratedTerminal",
+            "args": [
+                "dataset=dsec",
+                "+experiment/dsec=snn.yaml",
+                "hardware.gpus=4"
+            ],
+            "env": {
+                "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+                "CUDA_VISIBLE_DEVICES": "0,1,2,3",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "MKL_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        }
+    ]
+}
